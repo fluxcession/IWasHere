@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="eventid" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="checkinserver" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://check-in.fluxcess</Value>
+    </Setting>
+    <Setting Name="actionid" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Keynote1</Value>
+    </Setting>
+    <Setting Name="onoffline" Type="System.String" Scope="User">
+      <Value Profile="(Default)">online</Value>
+    </Setting>
+    <Setting Name="httpusername" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="httppassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="bgcolor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">636363</Value>
+    </Setting>
+    <Setting Name="bgpic" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="forecolor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ffffff</Value>
+    </Setting>
+    <Setting Name="qrcodestyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="actiontitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Action Title</Value>
+    </Setting>
+    <Setting Name="adminurl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://admin.fluxcess</Value>
+    </Setting>
+    <Setting Name="adminurlusername" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="adminurlpassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="popupbackgroundcolor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E5262626</Value>
+    </Setting>
+    <Setting Name="labelcontentThankyou" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Herzlich Willkommen,</Value>
+    </Setting>
+    <Setting Name="popupforegroundcolor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FFFFFFFF</Value>
+    </Setting>
+    <Setting Name="checkinsearchfieldname" Type="System.String" Scope="User">
+      <Value Profile="(Default)">guest_id</Value>
+    </Setting>
+    <Setting Name="applicationmode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">in</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

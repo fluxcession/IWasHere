@@ -1,0 +1,113 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IWasHere"
+        mc:Ignorable="d"
+        Title="fluxcess I Was Here" Height="425.03" Width="639.8" Icon="images/fluxcess_icon_256x256_circled.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
+    <Window.Resources>
+        <BitmapImage x:Key="ImageSource1" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\D\Documents\Visual Studio 2015\Projects\fluxcessCheckinIWasHere\fluxcessCheckinWPF\images\titelbild_bdh.png"/>
+    </Window.Resources>
+    <Grid x:Name="gridMain" Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="153*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" OpacityMask="Black">
+            <Label x:Name="labelDefaultMessage" Content="Bitte scannen Sie Ihr Ticket!" Foreground="White"/>
+        </Viewbox>
+        <Viewbox Margin="0,0,0,0" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" OpacityMask="Black">
+            <Label x:Name="labelTotalCounter" Content="..." Foreground="White"/>
+        </Viewbox>
+
+        <TextBox x:Name="textBoxSearchEx" HorizontalAlignment="Left" Height="44" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" FontSize="26.667" ToolTip="Suchausdruck" Margin="10,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0"/>
+        <ContentControl x:Name="ccPopup" Margin="181,0,155,8.8" Panel.ZIndex="100" Grid.RowSpan="2" Visibility="Visible">
+            <Grid x:Name="ccPopupGrid" Margin="-146,10,-123,10" Background="#E5262626">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="18*"/>
+                    <RowDefinition Height="65*"/>
+                    <RowDefinition Height="37*"/>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="105*"/>
+                    <RowDefinition Height="10*"/>
+                </Grid.RowDefinitions>
+
+
+                <Viewbox Margin="0,0,-0.2,35.6" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="3" OpacityMask="#FFB74D4D">
+                    <Label x:Name="labelGuestName" Content="** Name **" Foreground="White" FontSize="24" HorizontalContentAlignment="Center" Height="auto" Width="432"/>
+                </Viewbox>
+                <Viewbox Margin="0,0.2,-0.2,0.6" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Label x:Name="labelGuestCompany" Content="** Firma **" Foreground="White" FontSize="24" HorizontalContentAlignment="Center" Height="auto" Width="432" HorizontalAlignment="Stretch"/>
+                </Viewbox>
+                <Viewbox Margin="0,0.,-0,0." Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="1">
+                    <Label x:Name="labelDanke" Content="Herzlich Willkommen," HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Foreground="White" />
+                </Viewbox>
+                <Viewbox Margin="0,97.2,-0.2,0.4" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                    <Label x:Name="labelZaehlt" Content="" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch" Foreground="White" />
+                </Viewbox>
+            </Grid>
+        </ContentControl>
+        <ContentControl x:Name="ccSettings" Background="White" Panel.ZIndex="100" Visibility="Hidden" Margin="0,0,0,0.2" Grid.RowSpan="2">
+            <Grid Margin="0,0,0,0" Background="White">
+                <TextBox x:Name="textBoxServername" HorizontalAlignment="Left" Height="23" Margin="86,42,0,0" TextWrapping="NoWrap" Text="http://check-in.fluxcess" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label" Content="Einstellungen" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Label x:Name="label1" Content="Check-In Url" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label1_Copy" Content="Event Id" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxEventId" HorizontalAlignment="Left" Height="23" Margin="86,169,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="140"/>
+                <Button x:Name="buttonSettingsOk" Content="OK" HorizontalAlignment="Left" Margin="192,388,0,0" VerticalAlignment="Top" Width="138"/>
+                <Label x:Name="label1_Copy2" Content="Raum Id" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxRaumId" HorizontalAlignment="Left" Height="23" Margin="86,224,0,0" TextWrapping="Wrap" Text="R1" VerticalAlignment="Top" Width="140"/>
+                <RadioButton x:Name="radioButtonOnline" Content="online 1" HorizontalAlignment="Left" Margin="378,140,0,0" VerticalAlignment="Top" GroupName="onoffline"/>
+                <RadioButton x:Name="radioButtonOffline" Content="offline" HorizontalAlignment="Left" Margin="521,140,0,0" VerticalAlignment="Top" GroupName="onoffline"/>
+                <Label x:Name="labelUsername" Content="Username" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textHttpusername" HorizontalAlignment="Left" Height="23" Margin="86,73,0,0" TextWrapping="Wrap" Text="info@fluxcess.com" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="labelPassword" Content="Password" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="textHttppassword" HorizontalAlignment="Left" Height="23" Margin="86,101,0,0" VerticalAlignment="Top" Width="140"/>
+                <ComboBox x:Name="comboBoxRooms" HorizontalAlignment="Left" Margin="231,237,0,0" VerticalAlignment="Top" Width="189"/>
+                <Button x:Name="button" Content="Raumliste laden" HorizontalAlignment="Left" Margin="425,237,0,0" VerticalAlignment="Top" Width="117"/>
+                <TextBox x:Name="textboxRaumTitle" HorizontalAlignment="Left" Height="23" Margin="86,251,0,0" TextWrapping="Wrap" Text="Raum 1" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label1_Copy1" Content="Raum Titel" HorizontalAlignment="Left" Margin="10,247,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxAdminUrl" HorizontalAlignment="Left" Height="23" Margin="334,42,0,0" TextWrapping="NoWrap" Text="http://check-in.fluxcess" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label1_Copy3" Content="Admin Url" HorizontalAlignment="Left" Margin="258,41,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="labelUsername_Copy1" Content="Username" HorizontalAlignment="Left" Margin="259,70,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxAdminUrlUsername" HorizontalAlignment="Left" Height="23" Margin="335,73,0,0" TextWrapping="Wrap" Text="info@fluxcess.com" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="labelPassword_Copy" Content="Password" HorizontalAlignment="Left" Margin="259,99,0,0" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="textBoxAdminUrlPassword" HorizontalAlignment="Left" Height="23" Margin="335,101,0,0" VerticalAlignment="Top" Width="140"/>
+                <ComboBox x:Name="comboBoxFields" HorizontalAlignment="Left" Margin="231,197,0,0" VerticalAlignment="Top" Width="189"/>
+                <Button x:Name="buttonReloadFieldList" Content="Feldliste laden" HorizontalAlignment="Left" Margin="425,197,0,0" VerticalAlignment="Top" Width="117"/>
+                <ComboBox x:Name="comboBoxEvents" HorizontalAlignment="Left" Margin="231,170,0,0" VerticalAlignment="Top" Width="189"/>
+                <Button x:Name="buttonReloadFieldList_Copy" Content="Eventliste laden" Margin="425,171,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117"/>
+                <Label x:Name="label1_Copy4" Content="Feld" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBoxFieldName" HorizontalAlignment="Left" Height="23" Margin="86,197,0,0" TextWrapping="Wrap" Text="guest_id" VerticalAlignment="Top" Width="140"/>
+                <RadioButton x:Name="radioButtonModeCheckIn" Content="Check-In" HorizontalAlignment="Left" Margin="33,140,0,0" VerticalAlignment="Top" GroupName="actionmode"/>
+                <RadioButton x:Name="radioButtonModeCheckOut" Content="Check-Out" HorizontalAlignment="Left" Margin="124,140,0,0" VerticalAlignment="Top" GroupName="actionmode"/>
+                <RadioButton x:Name="radioButtonModeSpecial" Content="Spezialaktion" HorizontalAlignment="Left" Margin="218,140,0,0" VerticalAlignment="Top" GroupName="actionmode"/>
+                <Label x:Name="label1_Hintergrundfarbe" Content="Hintergrundfarbe" HorizontalAlignment="Left" Margin="10,298,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textboxBackgroundcolor" HorizontalAlignment="Left" Height="23" Margin="117,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label1_Hintergrundfarbe_Copy" Content="Schriftfarbe" HorizontalAlignment="Left" Margin="10,326,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textboxFontcolor" HorizontalAlignment="Left" Height="23" Margin="117,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label1_Hintergrundfarbe_Copy1" Content="Hintergrundbild" HorizontalAlignment="Left" Margin="10,354,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textboxBackgroundImage" HorizontalAlignment="Left" Height="23" Margin="117,358,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label1_Hintergrundfarbe_Copy2" Content="Hintergrundfarbe" HorizontalAlignment="Left" Margin="318,298,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textboxPopupBackgroundcolor" HorizontalAlignment="Left" Height="23" Margin="425,302,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <Label x:Name="label1_Hintergrundfarbe_Copy3" Content="Schriftfarbe" HorizontalAlignment="Left" Margin="318,326,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textboxPopupFontcolor" HorizontalAlignment="Left" Height="23" Margin="425,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140"/>
+                <RadioButton x:Name="radioButtonQRCodeStyle_1" Content="1" HorizontalAlignment="Left" Margin="548,70,0,0" VerticalAlignment="Top" GroupName="qrcodestyle"/>
+                <RadioButton x:Name="radioButtonQRCodeStyle_2" Content="2" HorizontalAlignment="Left" Margin="548,85,0,0" VerticalAlignment="Top" GroupName="qrcodestyle"/>
+                <Label x:Name="label1_Hintergrundfarbe_Copy4" Content="QR Code Typ" HorizontalAlignment="Left" Margin="519,38,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="radioButtonOnline2" Content="online 2" HorizontalAlignment="Left" Margin="448,140,0,0" VerticalAlignment="Top" GroupName="onoffline"/>
+            </Grid>
+        </ContentControl>
+        <TextBox x:Name="textBoxEventTitle" Margin="296,10,10,0" TextWrapping="Wrap" Text="Loading Event Data ..." Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA0A0A0" TextAlignment="Right" Height="23" VerticalAlignment="Top"/>
+
+    </Grid>
+
+</Window>
