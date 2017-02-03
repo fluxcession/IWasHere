@@ -119,7 +119,11 @@ Class MainWindow
         labelZaehlt.Foreground = popupfgcolor
     End Sub
 
-
+    ''' <summary>
+    ''' close the popup and stop the popup-closer-timer
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub popupclosetimer_Tick(sender As Object, e As EventArgs) Handles popupCloseTimer.Tick
         closePopup()
         popupCloseTimer.Stop()
