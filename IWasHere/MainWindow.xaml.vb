@@ -893,6 +893,10 @@ Class MainWindow
         mrequest.Headers("Authorization") = "Basic " + authInfo
     End Sub
 
+    ''' <summary>
+    ''' loads information about the event from the server
+    ''' or, if the server is not available, from a cache-file
+    ''' </summary>
     Private Sub loadEventData()
         Dim url As String = ""
         Dim content As String = ""
@@ -900,13 +904,13 @@ Class MainWindow
         Try
             url = My.Settings.adminurl + "/api/events/" + My.Settings.eventid.ToString
             Try
+                ' try to read the event data from the server ...
                 Dim myClient = New WebClient()
-
                 myClient.UseDefaultCredentials = True
                 myClient.Credentials = New NetworkCredential(My.Settings.adminurlusername, My.Settings.adminurlpassword)
                 content = myClient.DownloadString(url)
-
             Catch ex As Exception
+                ' if loading data via http(s) fails, load cached data from local file
                 content = readJsonEventdataFromFile(My.Settings.eventid)
                 fromFile = True
             End Try
@@ -914,23 +918,24 @@ Class MainWindow
             Dim result As JObject = Nothing
             Try
                 result = JObject.Parse(content)
+                ' write event data in json format to a cache file,
+                ' so that it is available even when there is no internet connection
                 If fromFile = False Then
                     storeJsonEventData(My.Settings.eventid, content)
                 End If
             Catch ex As Exception
                 fluxcessLog.logMsg("Problem parsing the event JSON: " + ex.Message + " | content: " + content, 5)
             End Try
+
+            ' store settings in the global variable "eventSettings"
             If Not result Is Nothing Then
                 If result.Item("err") Is Nothing And Not result.Item("event") Is Nothing Then
                     Dim rec = result.Item("event")
                     fluxcessLog.logMsg("Loaded event data for event id #" + My.Settings.eventid.ToString + " from server.", 20)
                     eventSettings = New eventSettings
                     eventSettings.loadSettings(rec)
-                    'fluxcessLog.logMsg("Event data: " + rec.ToString, 50)
-                    ' ToDo: Parse it - or at least store it.
-                    'adaptCheckinForm(rec)
-                    'MsgBox("Got the data: " + content)
 
+                    ' load information about rooms
                     readRoomSets(rec)
                 Else
                     fluxcessLog.logMsg("Problem reading the event data. Server answer is: " + content, 8)
@@ -1136,6 +1141,10 @@ Class MainWindow
         Return content
     End Function
 
+    ''' <summary>
+    ''' reads room sets from json object and fills the combobox with them
+    ''' </summary>
+    ''' <param name="data">json object from server</param>
     Private Sub readRoomSets(data As JObject)
         Try
             roomSets = New Dictionary(Of String, String)
@@ -1157,7 +1166,6 @@ Class MainWindow
                 allRoomIds.Add(myRoomCounter, kvp.Value.Item("id"))
                 allRoomTitles.Add(myRoomCounter, kvp.Value.Item("title"))
                 comboBoxRooms.Items.Insert(myRoomCounter - 1, kvp.Value.Item("title"))
-
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
