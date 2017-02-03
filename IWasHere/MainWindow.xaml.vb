@@ -90,6 +90,10 @@ Class MainWindow
             fluxcessLog.logMsg("Loading statistics or timer start failed: " + ex.Message, 1)
         End Try
     End Sub
+
+    ''' <summary>
+    ''' sets GUI colors according to the application-wide settings
+    ''' </summary>
     Private Sub designTheApp()
         Dim bc = New BrushConverter()
         If My.Settings.bgcolor.Length = 6 Then
@@ -113,11 +117,6 @@ Class MainWindow
         labelGuestCompany.Foreground = popupfgcolor
         labelGuestName.Foreground = popupfgcolor
         labelZaehlt.Foreground = popupfgcolor
-
-        'Dim bgimg As ImageBrush
-        'Dim bgimgsrc As ImageSource
-        'bgimg.ImageSource. = ""
-        'gridMain.Background =
     End Sub
 
 
