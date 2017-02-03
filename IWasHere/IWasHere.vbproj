@@ -141,6 +141,7 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
@@ -153,7 +154,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\fluxcess_icon_16x16_onwhite.ico" />
@@ -175,11 +178,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\fluxcess_icon_256x256_circled.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\titelbild_bdh.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

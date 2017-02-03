@@ -212,7 +212,7 @@ Class MainWindow
                 'MsgBox(rec)
                 loadPopupContent(rec)
             Else
-                MsgBox(result.ToString)
+                'MsgBox(result.ToString)
             End If
 
         Catch ex As Exception
@@ -437,7 +437,7 @@ Class MainWindow
         Try
 
             Dim url As String = My.Settings.adminurl + "/api/events/" + My.Settings.eventid.ToString + "/checkinstats"
-            MsgBox(url)
+            'MsgBox(url)
             Dim request As WebRequest = WebRequest.Create(url)
             SetBasicAuthHeader(request, My.Settings.adminurlusername, My.Settings.adminurlpassword)
             request.Timeout = timeoutms
@@ -829,7 +829,7 @@ Class MainWindow
     Private Sub loadStats()
         Try
             Dim url As String = My.Settings.checkinserver + "/aj/tnzjson"
-            MsgBox(url)
+            ' MsgBox(url)
             Dim request As WebRequest = WebRequest.Create(url)
             request.Method = "POST"
             request.Timeout = timeoutms

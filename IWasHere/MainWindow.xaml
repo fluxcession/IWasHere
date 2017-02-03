@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="fluxcess I Was Here" Height="425.03" Width="639.8" Icon="images/fluxcess_icon_256x256_circled.ico" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Window.Resources>
-        <BitmapImage x:Key="ImageSource1" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="C:\Users\D\Documents\Visual Studio 2015\Projects\fluxcessCheckinIWasHere\fluxcessCheckinWPF\images\titelbild_bdh.png"/>
     </Window.Resources>
     <Grid x:Name="gridMain" Background="Black">
         <Grid.RowDefinitions>
