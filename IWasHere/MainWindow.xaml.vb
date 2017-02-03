@@ -71,8 +71,10 @@ Class MainWindow
 
     Private Sub MainWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
         loadSettings()
+        ' dynamic colors of the application frontend
         designTheApp()
         textBoxSearchEx.Focus()
+        ' Hide the settings window
         ccPopup.Visibility = Visibility.Hidden
 
         Try
@@ -81,13 +83,12 @@ Class MainWindow
             ElseIf My.Settings.onoffline = "online2" Then
                 loadStats2()
             End If
+            ' the timer is used to check the statistics in regular intervals
             dt.Interval = New TimeSpan(0, 0, 10)
             dt.Start()
         Catch ex As Exception
-
+            fluxcessLog.logMsg("Loading statistics or timer start failed: " + ex.Message, 1)
         End Try
-
-
     End Sub
     Private Sub designTheApp()
         Dim bc = New BrushConverter()
