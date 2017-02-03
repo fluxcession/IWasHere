@@ -191,24 +191,6 @@ Class MainWindow
 
     End Sub
 
-    Private Sub textBoxSearchEx_KeyDown(sender As Object, e As KeyEventArgs) Handles textBoxSearchEx.KeyUp
-
-        'Select Case e.Key
-        '    Case Else
-        '        If lastSearchBoxContent <> textBoxSearchEx.Text Then
-        '            If textBoxSearchEx.Text.Length = 0 Then
-        '                lastSearchBoxContent = textBoxSearchEx.Text
-        '                searchForPersons(textBoxSearchEx.Text)
-        '            ElseIf textBoxSearchEx.Text.Substring(0, 1) <> "#" Then
-        '                lastSearchBoxContent = textBoxSearchEx.Text
-        '                searchForPersons(textBoxSearchEx.Text)
-        '            End If
-        '        End If
-        'End Select
-
-    End Sub
-
-
     Private Sub showGuestPopupFromGuestId(guest_id)
         currentGuestId = Nothing 'guest_id
         'LabelGuestId.Text = guest_id.ToString
