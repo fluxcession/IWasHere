@@ -117,6 +117,8 @@ Class MainWindow
         labelGuestCompany.Foreground = popupfgcolor
         labelGuestName.Foreground = popupfgcolor
         labelZaehlt.Foreground = popupfgcolor
+
+        labelDefaultMessage.Content = My.Settings.labelcontentInitialText
     End Sub
 
     ''' <summary>
@@ -775,6 +777,8 @@ Class MainWindow
         My.Settings.popupbackgroundcolor = textboxPopupBackgroundcolor.Text
         My.Settings.popupforegroundcolor = textboxPopupFontcolor.Text
 
+        My.Settings.labelcontentInitialText = textboxInitialText.Text
+
         My.Settings.Save()
         designTheApp()
     End Sub
@@ -823,6 +827,8 @@ Class MainWindow
 
         textboxPopupBackgroundcolor.Text = My.Settings.popupbackgroundcolor
         textboxPopupFontcolor.Text = My.Settings.popupforegroundcolor
+
+        textboxInitialText.Text = My.Settings.labelcontentInitialText
 
     End Sub
 

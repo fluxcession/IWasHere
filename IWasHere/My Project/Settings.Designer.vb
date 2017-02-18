@@ -280,6 +280,18 @@ Partial Friend NotInheritable Class MySettings
             Me("applicationmode") = value
         End Set
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Bitte scannen Sie Ihr Ticket!")>  _
+    Public Property labelcontentInitialText() As String
+        Get
+            Return CType(Me("labelcontentInitialText"),String)
+        End Get
+        Set
+            Me("labelcontentInitialText") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

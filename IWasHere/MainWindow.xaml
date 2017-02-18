@@ -54,7 +54,7 @@
                 </Viewbox>
             </Grid>
         </ContentControl>
-        <ContentControl x:Name="ccSettings" Background="White" Panel.ZIndex="100" Visibility="Hidden" Margin="0,0,0,0.2" Grid.RowSpan="2">
+        <ContentControl x:Name="ccSettings" Background="White" Panel.ZIndex="100" Visibility="Visible" Margin="0,0,0,0.2" Grid.RowSpan="2">
             <Grid Margin="0,0,0,0" Background="White">
                 <TextBox x:Name="textBoxServername" HorizontalAlignment="Left" Height="23" Margin="86,42,0,0" TextWrapping="NoWrap" Text="http://check-in.fluxcess" VerticalAlignment="Top" Width="140"/>
                 <Label x:Name="label" Content="Einstellungen" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
@@ -103,6 +103,8 @@
                 <RadioButton x:Name="radioButtonQRCodeStyle_2" Content="2" HorizontalAlignment="Left" Margin="548,85,0,0" VerticalAlignment="Top" GroupName="qrcodestyle"/>
                 <Label x:Name="label1_Hintergrundfarbe_Copy4" Content="QR Code Typ" HorizontalAlignment="Left" Margin="519,38,0,0" VerticalAlignment="Top"/>
                 <RadioButton x:Name="radioButtonOnline2" Content="online 2" HorizontalAlignment="Left" Margin="448,140,0,0" VerticalAlignment="Top" GroupName="onoffline"/>
+                <Label x:Name="label_initialtext" Content="Initialer Text" HorizontalAlignment="Left" Margin="318,354,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textboxInitialText" HorizontalAlignment="Left" Height="23" Margin="425,358,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Width="140"/>
             </Grid>
         </ContentControl>
         <TextBox x:Name="textBoxEventTitle" Margin="296,10,10,0" TextWrapping="Wrap" Text="Loading Event Data ..." Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFA0A0A0" TextAlignment="Right" Height="23" VerticalAlignment="Top"/>
